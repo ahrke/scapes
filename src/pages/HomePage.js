@@ -3,11 +3,15 @@ import { connect } from 'react-redux';
 
 import { fetchArticles } from '../actions/articles';
 
+import ArticleSamplesList from '../components/templates/ArticleSamplesList'; 
+
 const HomePage = ({articles}) => {
   console.log("==|> from Home, articles:",articles)
   return (
-    <h2>Home Page</h2>
-    
+    <div>
+      <h2>Home Page</h2>
+      <ArticleSamplesList articles={Object.keys(articles).map(key => articles[key])} />
+    </div>
   )
 }
 

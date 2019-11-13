@@ -10,6 +10,7 @@ import { Route, Switch } from 'react-router-dom';
 import rootReducer from './reducers';
 
 import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
 
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
@@ -18,6 +19,7 @@ function App() {
     <Provider store={store}>
       <Switch>
         <Route exact path='/' component={HomePage} />
+        <Route path='/login' component={LoginPage} />
       </Switch>
     </Provider>
   );
