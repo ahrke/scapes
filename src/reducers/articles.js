@@ -1,6 +1,7 @@
 const SET_ARTICLES = 'SET_ARTICLES';
 const SET_ARTICLE_FILTER = 'SET_ARTICLE_FILTER';
 const ADD_ARTICLE = 'ADD_ARTICLE';
+const SET_TAGS = 'SET_TAGS';
 
 export const articles = (state = {}, action) => {
   switch (action.type) {
@@ -10,6 +11,8 @@ export const articles = (state = {}, action) => {
       return state;
     case ADD_ARTICLE:
       return Object.assign({}, state, action.article);
+    case SET_TAGS:
+      return Object.assign({}, state, {tags: action.tags})
     default:
       return state;
   }
@@ -18,5 +21,6 @@ export const articles = (state = {}, action) => {
 export const articlesConstants = {
   SET_ARTICLES,
   SET_ARTICLE_FILTER,
-  ADD_ARTICLE
+  ADD_ARTICLE,
+  SET_TAGS
 } 

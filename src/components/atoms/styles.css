@@ -10,7 +10,15 @@ button {
   border-radius: 4px;
   padding: 10px;
   border: none;
-  background-color: #5e5ee0;
   color: #e9e9fc;
-  margin: 20px;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.tag_button {
+  background-color: #762efc;
+}
+
+.filter_button {
+  background-color: #3a59e4;
 }

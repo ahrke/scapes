@@ -21,3 +21,16 @@ export const userLogin = (email, password) => dispatch => {
     })
     .catch(err => console.error("received ERROR during login:", err));
 }
+
+export const fetchGetUser = () => dispatch => {
+  if (localStorage.token) {
+    axios.get('http://localhost:3000/api/user', {
+      headers: {
+        Authorization: `Token ${localStorage.token}`
+      }
+    })
+    .then(res => {
+      dispatch(setUser(res.data.user));
+    })
+  }
+}

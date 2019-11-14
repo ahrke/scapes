@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import { userLogin } from '../actions/users';
 import LoginForm from '../components/organisms/forms/LoginForm';
 
 
 const LoginPage = ({loginUser, user}) => {
-  if (user) return (<h2>logged in</h2>);
+  if (user) return (<Redirect to="/" />);
   
   return (
     <div>
