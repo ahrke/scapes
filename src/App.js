@@ -1,32 +1,38 @@
 import React from 'react';
-import './App.css';
-
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
+import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-
-import rootReducer from './reducers';
 
 import Header from './components/templates/Header';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import ArticlePage from './pages/ArticlePage';
+import NewArticle from './components/organisms/forms/NewArticle';
 
-const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
+import { fetchGetUser } from './actions/users';
+
+import './App.css';
 
 function App() {
 
   return (
-    <Provider store={store}>
+    <div>
       <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/login' component={LoginPage} />
+        <Route exact path='/articles/new' component={NewArticle} />
         <Route path='/articles/:slug' component={ArticlePage} />
       </Switch>
-    </Provider>
+    </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  user: state.users.user
+})
+
+const mapDispatchToProps = dispatch => ({
+  fetchUser: () => dispatch(fetchGetUser())
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

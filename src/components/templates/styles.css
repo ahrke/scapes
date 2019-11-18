@@ -25,7 +25,8 @@
 
 .tag_list_container {
   display: flex;
-  width: 20%;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .tag_list_title {
@@ -33,8 +34,42 @@
 }
 
 .article_sample_list {
+  flex: 4;
   height: 100%;
   display: flex;
   flex-flow: wrap;
   padding: 30px;
+}
+
+.article_sample_list:first-child {
+  width: 100%;
+  background-color: black;
+}
+
+.article_container {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.article_container .image {
+  width: 100%;
+  height: 500px;
+  background-position: 50% 50%;
+}
+
+.comments_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.comment_list_container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }

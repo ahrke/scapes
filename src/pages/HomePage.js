@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
 import { fetchArticles } from '../actions/articles';
-import { fetchGetUser } from '../actions/users';
 
 import ArticleSamplesList from '../components/templates/ArticleSamplesList'; 
 import TagList from '../components/templates/TagList';
@@ -13,16 +11,9 @@ import './styles.css';
 
 const HomePage = ({articles, user}) => {
 
-  if (!user) {
-    return (
-      <div>
-        <Redirect to='/login' />
-      </div>
-    )
-  }
   return (
     <div className="homepage">
-      <div>
+      <div className='homepage_sidebar'>
         <TagList />
         <FilterList />
       </div>
@@ -38,7 +29,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   doFetchArticles: dispatch(fetchArticles()),
-  fetchUser: () => dispatch(fetchGetUser())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

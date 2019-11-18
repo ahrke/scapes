@@ -8,6 +8,13 @@ const setUser = (user) => {
   }
 }
 
+export const userLogout = () => dispatch => {
+  localStorage.setItem('token', null);
+  dispatch({
+    type: uc.LOGOUT
+  })
+}
+
 export const userLogin = (email, password) => dispatch => {
   axios.post('http://localhost:3000/api/users/login', {
     user: {
