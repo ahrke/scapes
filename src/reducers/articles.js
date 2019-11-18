@@ -11,7 +11,7 @@ export const articles = (state = {
 }, action) => {
   switch (action.type) {
     case SET_ARTICLES:
-      return Object.assign({}, state, action.articles);
+      return Object.assign({}, state, {all: action.articles});
     case SET_ARTICLE_FILTER:
       return state;
     case SET_ARTICLE:

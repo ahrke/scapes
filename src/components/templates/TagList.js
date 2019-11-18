@@ -8,8 +8,8 @@ const TagList = ({ tags }) => {
     <div>
       <h4 className="tag_list_title">tags</h4>
       <div className="tag_list_container">
-        {tags && tags.map(tag => {
-          return <Tag tag={tag} />
+        {tags && tags.map((tag, i) => {
+          return <Tag key={i} tag={tag} />
         })}
       </div>
     </div>
