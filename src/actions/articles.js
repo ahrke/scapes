@@ -56,7 +56,7 @@ export const fetchPostArticles = (article) => dispatch => {
 
 export const fetchArticles = () => dispatch => {
   
-  return axios.get(BASE_URI + '/articles/')
+  return axios.get(BASE_URI + '/articles/', headersWithAuth)
     .then(res => {
       let articles = {};
       let tags = {};

@@ -9,7 +9,7 @@ import FilterList from '../components/templates/FilterList';
 
 import './styles.css';
 
-const HomePage = ({articles, user, doFetchArticles}) => {
+const HomePage = ({articles, doFetchArticles}) => {
   useEffect(() => {
     doFetchArticles()
   }, [])
@@ -35,8 +35,7 @@ const HomePage = ({articles, user, doFetchArticles}) => {
 }
 
 const mapStateToProps = state => ({
-  articles: state.articles.all,
-  user: state.users.user
+  articles: state.articles.all
 });
 
 const mapDispatchToProps = dispatch => ({

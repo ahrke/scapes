@@ -1,6 +1,7 @@
 .homepage {
   display: flex;
   flex-direction: row;
+  height: 100%;
 }
 
 .homepage_sidebar {
@@ -10,6 +11,11 @@
 }
 
 .article_page_container {
+  /* position: fixed; */
+  /* top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 100px; */
   display: flex;
   flex-direction: row;
   justify-content: center;

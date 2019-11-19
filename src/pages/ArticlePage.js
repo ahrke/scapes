@@ -31,7 +31,7 @@ const ArticlePage = (props) => {
         setComments(res.data.comments);
       })
     }
-  }, [article, props, props.refreshComments]);
+  }, [article]);
 
   if (article) {
     return (
@@ -51,7 +51,6 @@ const ArticlePage = (props) => {
 }
 
 const mapStateToProps = state => ({
-  articles: state.articles,
   article: state.articles.currentArticle,
   refreshComments: state.updateComments
 })

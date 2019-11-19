@@ -17,7 +17,7 @@ const Header = ({ user, fetchUser, logout }) => {
 
   return (
     <div className="header_container">
-      <Link to='/' style={{ textDecoration: 'none' }}><h2>scapes</h2></Link>
+      <Link to='/' style={{ textDecoration: 'none', color: 'black', margin: 'auto' }}><span style={{ fontSize: '2.2em', margin: 'auto', textDecoration: 'none' }}>scapes</span></Link>
       <div className='header_user_area'>
         <UserLogin user={user} />
         <UserLogout user={user} logout={logout} />

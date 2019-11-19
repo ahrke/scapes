@@ -12,7 +12,7 @@ const ArticleSidebar = ({ slug, description, liked, likeArticle }) => {
     <div className='article_sidebar'>
       <h3>Sidebar</h3>
       <p>{description}</p>
-      {(liked ? <IoIosHeart onClick={e => handleOnClick()} /> : <IoIosHeartEmpty onClick={e => handleOnClick()} />)}
+      {(liked ? <IoIosHeart size='1.5em' onClick={e => handleOnClick()} /> : <IoIosHeartEmpty size='1.5em' onClick={e => handleOnClick()} />)}
     </div>
   )
 }
