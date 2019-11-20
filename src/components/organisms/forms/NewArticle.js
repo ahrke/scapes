@@ -9,6 +9,7 @@ const NewArticle = ({ user, postArticle }) => {
   let [description, setDescription] = useState('');
   let [body, setBody] = useState('');
   let [tags, setTags] = useState('');
+  let [img, setImg] = useState('');
 
   const buildArticle = () => {
     let tagsArr = tags.trim().split(',');
@@ -17,6 +18,7 @@ const NewArticle = ({ user, postArticle }) => {
       title,
       description,
       body,
+      img,
       tagList: tagsArr
     }
   }
@@ -37,6 +39,10 @@ const NewArticle = ({ user, postArticle }) => {
         type='text' placeholder='description of your piece to share' className='new_article_form_items'
         onChange={e => setDescription(e.target.value)}  />
       <p className='new_article_labels'>what do you want to say?</p>
+      <input 
+        type='text' placeholder='image url' className='new_article_form_items'
+        onChange={e => setImg(e.target.value)} />
+      <p className='new_article_labels'>image</p>
       <textarea 
         type='' className='new_article_form_items' style={{ height: '500px' }}
         onChange={e => setBody(e.target.value)}  />
